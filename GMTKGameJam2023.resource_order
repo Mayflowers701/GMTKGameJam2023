@@ -17,6 +17,7 @@
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"Env","order":2,"path":"folders/Sprites/Env.yy",},
+    {"name":"group1","order":3,"path":"folders/Sprites/group1.yy",},
     {"name":"Player","order":1,"path":"folders/Sprites/Player.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
@@ -41,6 +42,7 @@
     {"name":"obj_bow","order":1,"path":"objects/obj_bow/obj_bow.yy",},
     {"name":"obj_kill","order":5,"path":"objects/obj_kill/obj_kill.yy",},
     {"name":"spr_boomerang","order":2,"path":"sprites/spr_boomerang/spr_boomerang.yy",},
+    {"name":"room_Lvl1","order":2,"path":"rooms/room_Lvl1/room_Lvl1.yy",},
     {"name":"roo_test","order":1,"path":"rooms/roo_test/roo_test.yy",},
   ],
 }
