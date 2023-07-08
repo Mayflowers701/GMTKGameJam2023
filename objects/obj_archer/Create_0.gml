@@ -39,6 +39,10 @@ spin_cycle = 0; // max 20;
 x_prev = x;
 y_prev = y;
 
+// Boomerang Position
+boom_charge = 0;
+boom_angle = 0;
+
 
 
 // Create Crosshair

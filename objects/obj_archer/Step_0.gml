@@ -34,6 +34,11 @@ if( place_meeting(x, y+1, obj_solid) && !iframe ){
 			
 		}
 		
+		if(tumble){
+			tumble=false;
+			skid = true;
+		}
+		
 		if(stun){
 			stun = false;
 			belly_up = true;
@@ -154,6 +159,26 @@ if( belly_up ){
 	image_index = 35;
 	vel_x = vel_x/1.1;
 }
+
+// Tumble animation (boomerang)
+// Should've called this "pinwheel"
+if( tumble ){
+	image_angle += 20;
+	image_index = 15;
+	
+	var face = sign(image_xscale);
+	
+	boom_angle+=5;
+	if(boom_angle >= 225){
+		boom_angle = 225;
+		
+	}else{
+		vel_y = lengthdir_y(boom_charge, boom_angle);	
+	}
+	
+	vel_x = (lengthdir_x(boom_charge, boom_angle) +1)*face;
+	
+}
 	
 
 // Movement: update position based on velocity
@@ -176,7 +201,7 @@ if( charge ){
 
 
 // If bow released, launch!
-if(charge && mouse_check_button_released(mb_right)){
+if(charge && mouse_check_button_released(mb_right) && bow){
 	iframe = 5;
 	launched = true;
 	spin = true;
@@ -193,6 +218,26 @@ if(charge && mouse_check_button_released(mb_right)){
 	}
 }
 
+// If boomerang released, launch!
+if(charge && mouse_check_button_released(mb_right) && boomerang){
+	iframe = 5;
+	launched = true;
+	tumble = true;
+	
+	boom_charge = charge/20;
+	
+	//vel_x = lengthdir_x( charge/20, point_direction(x,y,mouse_x,mouse_y) );
+	//vel_y = lengthdir_y( charge/20, point_direction(x,y,mouse_x,mouse_y) ) - 2;
+	airborne = true;
+	
+	//Drop Boomerang
+	if(holding){
+		boomerang = false;
+		holding.held = false;
+		holding = pointer_null;
+	}
+}
+
 // Tic iframe
 if(iframe){
 	iframe--;
@@ -202,7 +247,14 @@ if(iframe){
 if(mouse_check_button(mb_right) && bow){
 	if(charge <= 150) charge+=5;
 	image_index = 12;
-}else{
+}
+// Check for boomerang draw
+else if(mouse_check_button(mb_right) && boomerang){
+	if(charge <= 150) charge+=5;
+	image_index = 13;
+}
+// Reset charge
+else{
 	charge = 0;
 }
 
