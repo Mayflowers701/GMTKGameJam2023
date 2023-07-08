@@ -56,6 +56,7 @@
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},},
     {"id":{"name":"obj_archer","path":"objects/obj_archer/obj_archer.yy",},},
     {"id":{"name":"spr_blue_wall","path":"sprites/spr_blue_wall/spr_blue_wall.yy",},},
+    {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},},
     {"id":{"name":"spr_player_armed","path":"sprites/spr_player_armed/spr_player_armed.yy",},},
     {"id":{"name":"spr_bow","path":"sprites/spr_bow/spr_bow.yy",},},
     {"id":{"name":"obj_blue_wall","path":"objects/obj_blue_wall/obj_blue_wall.yy",},},

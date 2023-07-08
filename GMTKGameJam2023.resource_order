@@ -36,6 +36,7 @@
     {"name":"spr_bowling_ball","order":4,"path":"sprites/spr_bowling_ball/spr_bowling_ball.yy",},
     {"name":"obj_solid","order":2,"path":"objects/obj_solid/obj_solid.yy",},
     {"name":"spr_blue_wall","order":3,"path":"sprites/spr_blue_wall/spr_blue_wall.yy",},
+    {"name":"obj_item","order":5,"path":"objects/obj_item/obj_item.yy",},
     {"name":"spr_player_armed","order":3,"path":"sprites/spr_player_armed/spr_player_armed.yy",},
     {"name":"obj_blue_wall","order":4,"path":"objects/obj_blue_wall/obj_blue_wall.yy",},
     {"name":"obj_bow","order":1,"path":"objects/obj_bow/obj_bow.yy",},
