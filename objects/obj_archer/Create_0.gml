@@ -8,12 +8,14 @@ vel_y = 0;
 
 // Control Speed
 walk_speed = 1;
+jump_speed = 1.8;
 
 // In Air
+airborne = false;
 jumping = false;
 spin = false;
 tumble = false;
-grav = 0.03;
+grav = 0.06;
 
 // Inventory
 charge = 0; // max 120
