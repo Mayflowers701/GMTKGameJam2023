@@ -130,7 +130,7 @@ if(jumping){
 if(spin){
 	image_index = 19 + spin_cycle/2;
 	spin_cycle++;
-	image_angle = -90+ point_direction(x,y,mouse_x,mouse_y);
+	image_angle = -90+ point_direction(x_prev,y_prev,x,y);
 	
 	if( spin_cycle > 27) spin_cycle = 0;
 }
