@@ -34,3 +34,8 @@ spin_cycle = 0; // max 20;
 // Previous Position
 x_prev = x;
 y_prev = y;
+
+
+
+// Create Crosshair
+instance_create_layer(0,0,"Instances", obj_crosshair);

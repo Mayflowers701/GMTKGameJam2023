@@ -17,6 +17,8 @@ if(!charge && !launched){
 if( place_meeting(x, y+1, obj_solid) ){
 	airborne = false;
 	jumping = false;
+	launched = false;
+	spin = false;
 
 }
 // Jump
@@ -86,7 +88,7 @@ if(jumping){
 if(spin){
 	image_index = 19 + spin_cycle/2;
 	spin_cycle++;
-	image_angle = 90+ point_direction(x,y,mouse_x,mouse_y);
+	image_angle = -90+ point_direction(x,y,mouse_x,mouse_y);
 	
 	if( spin_cycle > 27) spin_cycle = 0;
 }
@@ -109,8 +111,8 @@ if(charge && mouse_check_button_released(mb_right)){
 	launched = true;
 	spin = true;
 	
-	vel_x = -lengthdir_x( charge/60, mouse_x );
-	vel_y = lengthdir_y( charge/60, mouse_y );
+	vel_x = -lengthdir_x( charge/50, mouse_x );
+	vel_y = lengthdir_y( charge/50, mouse_y );
 	airborne = true;
 	
 	//Drop Bow

@@ -23,8 +23,10 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bowling_ball","order":3,"path":"objects/obj_bowling_ball/obj_bowling_ball.yy",},
+    {"name":"obj_crosshair","order":4,"path":"objects/obj_crosshair/obj_crosshair.yy",},
     {"name":"obj_blue_floor","order":1,"path":"objects/obj_blue_floor/obj_blue_floor.yy",},
     {"name":"spr_solid_placeholder","order":1,"path":"sprites/spr_solid_placeholder/spr_solid_placeholder.yy",},
+    {"name":"spr_crosshair","order":6,"path":"sprites/spr_crosshair/spr_crosshair.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"obj_boomerang","order":2,"path":"objects/obj_boomerang/obj_boomerang.yy",},
     {"name":"spr_bow_small","order":5,"path":"sprites/spr_bow_small/spr_bow_small.yy",},
