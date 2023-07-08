@@ -1,5 +1,13 @@
 /// @description Handles Input, Physics, and Tools
 
+// Before we do anything, check to make sure we're not in a floor
+// teleport out of floor if stuck
+while( place_meeting(x,y, obj_solid) ){
+	y--;
+}
+
+
+
 // Handle Input:
 var _key_right = keyboard_check(ord("D"));
 var _key_left = keyboard_check(ord("A"));
@@ -7,14 +15,14 @@ var _key_jump = keyboard_check_pressed(vk_space);
 
 // Horizontal movement
 var _h_walk = (_key_right - _key_left) * walk_speed;
-if(!charge && !launched && !skid){
+if(!charge && !launched && !skid && !belly_up){
 	vel_x = _h_walk; 
-}else if(!airborne && !skid && !belly_up){
+}else if(!airborne && !launched && !skid && !belly_up ){
 	vel_x = 0;
 }
 
 // Landing - behavior depends on previous state
-if( place_meeting(x, y+1, obj_solid) ){
+if( place_meeting(x, y+1, obj_solid) && !iframe ){
 	airborne = false;
 	jumping = false;
 	
@@ -122,7 +130,7 @@ if(jumping){
 if(spin){
 	image_index = 19 + spin_cycle/2;
 	spin_cycle++;
-	image_angle = -90+ point_direction(x,y,mouse_x,mouse_y);
+	image_angle = -90+ point_direction(x_prev,y_prev,x,y);
 	
 	if( spin_cycle > 27) spin_cycle = 0;
 }
@@ -136,12 +144,15 @@ if( skid ){
 
 // Stun Animation
 if( stun ){
+	image_angle = 0;
 	image_index = 34;
 }
 
 // Belly-up Animation
 if( belly_up ){
+	image_angle = 0;
 	image_index = 35;
+	vel_x = vel_x/1.1;
 }
 	
 
@@ -150,9 +161,13 @@ if( belly_up ){
 //y += vel_y;
 
 // Facing: Update based on horizontal movement
-if( !launched){
+if( !launched ){
 	if( vel_x < 0 ) image_xscale = -1;
 	if( vel_x > 0 ) image_xscale = 1;
+}
+
+if( charge ){
+	image_xscale = sign( mouse_x - x ); // Face toward the mouse when charging
 }
 
 
@@ -162,11 +177,12 @@ if( !launched){
 
 // If bow released, launch!
 if(charge && mouse_check_button_released(mb_right)){
+	iframe = 5;
 	launched = true;
 	spin = true;
 	
-	vel_x = lengthdir_x( charge/20, mouse_x );
-	vel_y = lengthdir_y( charge/20, mouse_y );
+	vel_x = lengthdir_x( charge/20, point_direction(x,y,mouse_x,mouse_y) );
+	vel_y = lengthdir_y( charge/20, point_direction(x,y,mouse_x,mouse_y) ) - 2;
 	airborne = true;
 	
 	//Drop Bow
@@ -175,6 +191,11 @@ if(charge && mouse_check_button_released(mb_right)){
 		holding.held = false;
 		holding = pointer_null;
 	}
+}
+
+// Tic iframe
+if(iframe){
+	iframe--;
 }
 
 // Check for bow draw
