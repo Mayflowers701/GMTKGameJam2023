@@ -44,6 +44,7 @@
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"obj_boomerang","path":"objects/obj_boomerang/obj_boomerang.yy",},},
+    {"id":{"name":"spr_bowling_ball","path":"sprites/spr_bowling_ball/spr_bowling_ball.yy",},},
     {"id":{"name":"obj_archer","path":"objects/obj_archer/obj_archer.yy",},},
     {"id":{"name":"spr_player_armed","path":"sprites/spr_player_armed/spr_player_armed.yy",},},
     {"id":{"name":"spr_bow","path":"sprites/spr_bow/spr_bow.yy",},},

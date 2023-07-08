@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description This is mostly instance variables
 
 // Instance Variables
 vel_x = 0;
