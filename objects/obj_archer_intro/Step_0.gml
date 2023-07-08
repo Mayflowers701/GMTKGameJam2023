@@ -8,10 +8,28 @@ while( place_meeting(x,y, obj_solid) ){
 
 
 
+
+
 // Handle Input:
 var _key_right = keyboard_check(ord("D"));
 var _key_left = keyboard_check(ord("A"));
 var _key_jump = keyboard_check_pressed(vk_space);
+
+// Jump
+if( place_meeting(x, y+1, obj_solid) && _key_jump){
+	sleep = false;
+	airborne = true;
+	jumping = true;
+	skid = false; // reset fallen downs state
+	belly_up = false; // reset fallen state
+	vel_y = -jump_speed;
+}
+
+// If sleeping, don't do anything until jump
+if(sleep){
+	image_index = 36;
+	exit;
+}
 
 // Horizontal movement
 var _h_walk = (_key_right - _key_left) * walk_speed;
@@ -49,14 +67,7 @@ if( place_meeting(x, y+1, obj_solid) && !iframe ){
 	
 
 }
-// Jump
-if( place_meeting(x, y+1, obj_solid) && _key_jump){
-	airborne = true;
-	jumping = true;
-	skid = false; // reset fallen downs state
-	belly_up = false; // reset fallen state
-	vel_y = -jump_speed;
-}
+
 
 
 // Gravity
