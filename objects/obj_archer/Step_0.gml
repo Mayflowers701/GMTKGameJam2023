@@ -262,3 +262,6 @@ else{
 // Previous Position
 x_prev = x;
 y_prev = y;
+
+// terminal velocity
+if( vel_y > 9 ){ vel_y = 9 ;}

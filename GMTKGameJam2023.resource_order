@@ -24,6 +24,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bowling_ball","order":3,"path":"objects/obj_bowling_ball/obj_bowling_ball.yy",},
+    {"name":"roo_stage02","order":4,"path":"rooms/roo_stage02/roo_stage02.yy",},
     {"name":"obj_crosshair","order":4,"path":"objects/obj_crosshair/obj_crosshair.yy",},
     {"name":"obj_blue_floor","order":1,"path":"objects/obj_blue_floor/obj_blue_floor.yy",},
     {"name":"spr_kill","order":4,"path":"sprites/spr_kill/spr_kill.yy",},

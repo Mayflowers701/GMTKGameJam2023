@@ -41,6 +41,7 @@
   },
   "resources": [
     {"id":{"name":"obj_bowling_ball","path":"objects/obj_bowling_ball/obj_bowling_ball.yy",},},
+    {"id":{"name":"roo_stage02","path":"rooms/roo_stage02/roo_stage02.yy",},},
     {"id":{"name":"obj_crosshair","path":"objects/obj_crosshair/obj_crosshair.yy",},},
     {"id":{"name":"obj_blue_floor","path":"objects/obj_blue_floor/obj_blue_floor.yy",},},
     {"id":{"name":"spr_kill","path":"sprites/spr_kill/spr_kill.yy",},},
@@ -78,6 +79,7 @@
     {"id":{"name":"spr_blue_floor","path":"sprites/spr_blue_floor/spr_blue_floor.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"roo_stage02","path":"rooms/roo_stage02/roo_stage02.yy",},},
     {"roomId":{"name":"roo_stage00","path":"rooms/roo_stage00/roo_stage00.yy",},},
     {"roomId":{"name":"roo_stage01","path":"rooms/roo_stage01/roo_stage01.yy",},},
     {"roomId":{"name":"roo_test","path":"rooms/roo_test/roo_test.yy",},},
