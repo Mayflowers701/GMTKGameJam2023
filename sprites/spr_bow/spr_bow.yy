@@ -4,7 +4,7 @@
   "name": "spr_bow",
   "bbox_bottom": 29,
   "bbox_left": 6,
-  "bbox_right": 31,
+  "bbox_right": 30,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,

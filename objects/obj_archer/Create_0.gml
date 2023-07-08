@@ -16,6 +16,9 @@ launched = false;	// Launched by an item
 jumping = false;	// Jumped
 spin = false;		// Launched by bow
 tumble = false;		// Launched by boomerang
+skid = false;		// Landing from spin
+stun = false;		// Bouncing off a wall
+belly_up = false;	// Landed after bouncing
 grav = 0.2;
 
 // Inventory

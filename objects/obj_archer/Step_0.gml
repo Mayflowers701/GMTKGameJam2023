@@ -7,24 +7,41 @@ var _key_jump = keyboard_check_pressed(vk_space);
 
 // Horizontal movement
 var _h_walk = (_key_right - _key_left) * walk_speed;
-if(!charge && !launched){
-	vel_x = _h_walk; //Will remove velocity added by walk later so it doesn't stack
-}else if(!airborne){
+if(!charge && !launched && !skid){
+	vel_x = _h_walk; 
+}else if(!airborne && !skid && !belly_up){
 	vel_x = 0;
 }
 
-// Land
+// Landing - behavior depends on previous state
 if( place_meeting(x, y+1, obj_solid) ){
 	airborne = false;
 	jumping = false;
+	
+	if(launched){
+	
+		if(spin){
+			spin = false;
+			skid = true;
+			
+		}
+		
+		if(stun){
+			stun = false;
+			belly_up = true;
+		}
+	
+	}
 	launched = false;
-	spin = false;
+	
 
 }
 // Jump
 if( place_meeting(x, y+1, obj_solid) && _key_jump){
 	airborne = true;
 	jumping = true;
+	skid = false; // reset fallen downs state
+	belly_up = false; // reset fallen state
 	vel_y = -jump_speed;
 }
 
@@ -43,7 +60,24 @@ if(place_meeting(x+vel_x, y, obj_solid)){
         x = x + _opx;
     }
 	
-    vel_x = 0;
+    
+	
+	// if in launched (bow, boomerang), enter "stun"
+	
+	if(launched || stun){
+		//launched = false;
+		spin = false;
+		tumble = false;
+		stun = true;
+		
+		vel_x = -sign(vel_x) * 1;
+		vel_y = -1;
+		image_angle = 0;
+		
+	}else{
+		vel_x = 0;
+	}
+	
 	
 }
 x += vel_x;
@@ -92,6 +126,23 @@ if(spin){
 	
 	if( spin_cycle > 27) spin_cycle = 0;
 }
+
+// Skid Animation
+if( skid ){
+	image_angle = 0;
+	image_index = 33;
+	vel_x = vel_x/1.1;
+}
+
+// Stun Animation
+if( stun ){
+	image_index = 34;
+}
+
+// Belly-up Animation
+if( belly_up ){
+	image_index = 35;
+}
 	
 
 // Movement: update position based on velocity
@@ -99,8 +150,11 @@ if(spin){
 //y += vel_y;
 
 // Facing: Update based on horizontal movement
-if( vel_x < 0 ) image_xscale = -1;
-if( vel_x > 0 ) image_xscale = 1;
+if( !launched){
+	if( vel_x < 0 ) image_xscale = -1;
+	if( vel_x > 0 ) image_xscale = 1;
+}
+
 
 // Strip walk velocity so it doesn't stack
 //vel_x -= _h_walk;
@@ -124,7 +178,7 @@ if(charge && mouse_check_button_released(mb_right)){
 }
 
 // Check for bow draw
-if(mouse_check_button(mb_right)){
+if(mouse_check_button(mb_right) && bow){
 	if(charge <= 150) charge+=5;
 	image_index = 12;
 }else{
