@@ -16,23 +16,23 @@ if(airborne){
 
 
 // If bow released, launch!
-if(drawing && mouse_check_button_released(mb_right)){
-	vel_x = -lengthdir_x( drawing/60, mouse_x );
-	vel_y = lengthdir_y( drawing/60, mouse_y );
+if(charge && mouse_check_button_released(mb_right)){
+	vel_x = -lengthdir_x( charge/60, mouse_x );
+	vel_y = lengthdir_y( charge/60, mouse_y );
 	airborne = true;
 }
 
 // Check for bow draw
 if(mouse_check_button(mb_right)){
-	if(drawing <= 120) drawing++;
+	if(charge <= 120) charge++;
 	image_index = 1;
 }else{
 	image_index = 0;
-	drawing = 0;
+	charge = 0;
 }
 
 // Temp -> if drawing, change color indicate such
-if(drawing){
+if(charge){
 	// Change image index
 	//image_blend = c_green;
 }else{

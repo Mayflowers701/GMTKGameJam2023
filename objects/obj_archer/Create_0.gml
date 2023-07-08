@@ -7,5 +7,10 @@ vel_y = 0;
 airborne = false;
 grav = 0.03;
 
-armed = true;
-drawing = 0; // max = 120
+// Inventory
+armed = false;
+charge = 0; // max 120
+
+bow = false
+boomerang = false;
+
