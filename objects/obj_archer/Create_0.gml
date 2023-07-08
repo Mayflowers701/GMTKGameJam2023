@@ -7,8 +7,8 @@ vel_x = 0;
 vel_y = 0;
 
 // Control Speed
-walk_speed = 1;
-jump_speed = 1.8;
+walk_speed = 2;
+jump_speed = 4;
 
 // In Air
 airborne = false;	// In the air for any reason
@@ -16,7 +16,7 @@ launched = false;	// Launched by an item
 jumping = false;	// Jumped
 spin = false;		// Launched by bow
 tumble = false;		// Launched by boomerang
-grav = 0.06;
+grav = 0.2;
 
 // Inventory
 charge = 0; // max 120

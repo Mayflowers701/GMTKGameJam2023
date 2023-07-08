@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_blue_floor",
+  "name": "obj_blue_wall",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_blue_wall",
-    "path": "sprites/spr_blue_wall/spr_blue_wall.yy",
+    "name": "spr_blue_floor",
+    "path": "sprites/spr_blue_floor/spr_blue_floor.yy",
   },
   "spriteMaskId": null,
   "visible": true,

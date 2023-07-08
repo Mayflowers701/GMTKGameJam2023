@@ -3,7 +3,7 @@
 // Handle Input:
 var _key_right = keyboard_check(ord("D"));
 var _key_left = keyboard_check(ord("A"));
-var _key_jump = keyboard_check(vk_space);
+var _key_jump = keyboard_check_pressed(vk_space);
 
 // Horizontal movement
 var _h_walk = (_key_right - _key_left) * walk_speed;
@@ -111,8 +111,8 @@ if(charge && mouse_check_button_released(mb_right)){
 	launched = true;
 	spin = true;
 	
-	vel_x = -lengthdir_x( charge/50, mouse_x );
-	vel_y = lengthdir_y( charge/50, mouse_y );
+	vel_x = lengthdir_x( charge/20, mouse_x );
+	vel_y = lengthdir_y( charge/20, mouse_y );
 	airborne = true;
 	
 	//Drop Bow
