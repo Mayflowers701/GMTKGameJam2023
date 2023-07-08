@@ -47,6 +47,7 @@
     {"id":{"name":"spr_player_armed","path":"sprites/spr_player_armed/spr_player_armed.yy",},},
     {"id":{"name":"spr_bow","path":"sprites/spr_bow/spr_bow.yy",},},
     {"id":{"name":"obj_bow","path":"objects/obj_bow/obj_bow.yy",},},
+    {"id":{"name":"spr_boomerang","path":"sprites/spr_boomerang/spr_boomerang.yy",},},
     {"id":{"name":"roo_test","path":"rooms/roo_test/roo_test.yy",},},
     {"id":{"name":"spr_blue_floor","path":"sprites/spr_blue_floor/spr_blue_floor.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
