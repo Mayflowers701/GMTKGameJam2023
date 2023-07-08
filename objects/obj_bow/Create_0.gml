@@ -1,2 +1,2 @@
 // Instance variables
-held = true;
+held = false;

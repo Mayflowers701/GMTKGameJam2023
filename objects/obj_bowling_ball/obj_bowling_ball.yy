@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_floor",
+  "name": "obj_bowling_ball",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Env",
-    "path": "folders/Objects/Env.yy",
+    "name": "Player",
+    "path": "folders/Objects/Player.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_blue_floor",
-    "path": "sprites/spr_blue_floor/spr_blue_floor.yy",
+    "name": "spr_bowling_ball",
+    "path": "sprites/spr_bowling_ball/spr_bowling_ball.yy",
   },
   "spriteMaskId": null,
   "visible": true,
