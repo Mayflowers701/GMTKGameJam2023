@@ -15,14 +15,14 @@ var _key_jump = keyboard_check_pressed(vk_space);
 
 // Horizontal movement
 var _h_walk = (_key_right - _key_left) * walk_speed;
-if(!charge && !launched && !skid){
+if(!charge && !launched && !skid && !belly_up){
 	vel_x = _h_walk; 
-}else if(!airborne && !skid && !belly_up){
+}else if(!airborne && !launched && !skid && !belly_up ){
 	vel_x = 0;
 }
 
 // Landing - behavior depends on previous state
-if( place_meeting(x, y+1, obj_solid) ){
+if( place_meeting(x, y+1, obj_solid) && !iframe ){
 	airborne = false;
 	jumping = false;
 	
@@ -144,12 +144,15 @@ if( skid ){
 
 // Stun Animation
 if( stun ){
+	image_angle = 0;
 	image_index = 34;
 }
 
 // Belly-up Animation
 if( belly_up ){
+	image_angle = 0;
 	image_index = 35;
+	vel_x = vel_x/1.1;
 }
 	
 
@@ -174,11 +177,12 @@ if( charge ){
 
 // If bow released, launch!
 if(charge && mouse_check_button_released(mb_right)){
+	iframe = 5;
 	launched = true;
 	spin = true;
 	
 	vel_x = lengthdir_x( charge/20, point_direction(x,y,mouse_x,mouse_y) );
-	vel_y = lengthdir_y( charge/20, point_direction(x,y,mouse_x,mouse_y) );
+	vel_y = lengthdir_y( charge/20, point_direction(x,y,mouse_x,mouse_y) ) - 2;
 	airborne = true;
 	
 	//Drop Bow
@@ -187,6 +191,11 @@ if(charge && mouse_check_button_released(mb_right)){
 		holding.held = false;
 		holding = pointer_null;
 	}
+}
+
+// Tic iframe
+if(iframe){
+	iframe--;
 }
 
 // Check for bow draw

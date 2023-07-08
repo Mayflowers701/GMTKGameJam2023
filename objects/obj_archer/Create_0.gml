@@ -19,6 +19,7 @@ tumble = false;		// Launched by boomerang
 skid = false;		// Landing from spin
 stun = false;		// Bouncing off a wall
 belly_up = false;	// Landed after bouncing
+iframe = 0;			// 5 frames of i when launched
 grav = 0.2;
 
 // Inventory
