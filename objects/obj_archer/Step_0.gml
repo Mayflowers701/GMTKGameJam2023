@@ -1,5 +1,13 @@
 /// @description Handles Input, Physics, and Tools
 
+// Before we do anything, check to make sure we're not in a floor
+// teleport out of floor if stuck
+while( place_meeting(x,y, obj_solid) ){
+	y--;
+}
+
+
+
 // Handle Input:
 var _key_right = keyboard_check(ord("D"));
 var _key_left = keyboard_check(ord("A"));
@@ -150,9 +158,13 @@ if( belly_up ){
 //y += vel_y;
 
 // Facing: Update based on horizontal movement
-if( !launched){
+if( !launched ){
 	if( vel_x < 0 ) image_xscale = -1;
 	if( vel_x > 0 ) image_xscale = 1;
+}
+
+if( charge ){
+	image_xscale = sign( mouse_x - x ); // Face toward the mouse when charging
 }
 
 
@@ -165,8 +177,8 @@ if(charge && mouse_check_button_released(mb_right)){
 	launched = true;
 	spin = true;
 	
-	vel_x = lengthdir_x( charge/20, mouse_x );
-	vel_y = lengthdir_y( charge/20, mouse_y );
+	vel_x = lengthdir_x( charge/20, point_direction(x,y,mouse_x,mouse_y) );
+	vel_y = lengthdir_y( charge/20, point_direction(x,y,mouse_x,mouse_y) );
 	airborne = true;
 	
 	//Drop Bow
