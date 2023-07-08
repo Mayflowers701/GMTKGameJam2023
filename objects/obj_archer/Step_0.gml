@@ -7,13 +7,19 @@ var _key_jump = keyboard_check(vk_space);
 
 // Horizontal movement
 var _h_walk = (_key_right - _key_left) * walk_speed;
-vel_x = _h_walk; //Will remove velocity added by walk later so it doesn't stack
+if(!charge && !launched){
+	vel_x = _h_walk; //Will remove velocity added by walk later so it doesn't stack
+}else if(!airborne){
+	vel_x = 0;
+}
 
-// Jump
+// Land
 if( place_meeting(x, y+1, obj_solid) ){
 	airborne = false;
 	jumping = false;
+
 }
+// Jump
 if( place_meeting(x, y+1, obj_solid) && _key_jump){
 	airborne = true;
 	jumping = true;
@@ -75,6 +81,15 @@ if(_h_walk != 0 && !airborne){
 if(jumping){
 	//image_index = 15;
 }
+
+// Spin animation
+if(spin){
+	image_index = 19 + spin_cycle/2;
+	spin_cycle++;
+	image_angle = 90+ point_direction(x,y,mouse_x,mouse_y);
+	
+	if( spin_cycle > 27) spin_cycle = 0;
+}
 	
 
 // Movement: update position based on velocity
@@ -91,6 +106,9 @@ if( vel_x > 0 ) image_xscale = 1;
 
 // If bow released, launch!
 if(charge && mouse_check_button_released(mb_right)){
+	launched = true;
+	spin = true;
+	
 	vel_x = -lengthdir_x( charge/60, mouse_x );
 	vel_y = lengthdir_y( charge/60, mouse_y );
 	airborne = true;
@@ -112,4 +130,6 @@ if(mouse_check_button(mb_right)){
 }
 
 
-
+// Previous Position
+x_prev = x;
+y_prev = y;

@@ -11,10 +11,11 @@ walk_speed = 1;
 jump_speed = 1.8;
 
 // In Air
-airborne = false;
-jumping = false;
-spin = false;
-tumble = false;
+airborne = false;	// In the air for any reason
+launched = false;	// Launched by an item
+jumping = false;	// Jumped
+spin = false;		// Launched by bow
+tumble = false;		// Launched by boomerang
 grav = 0.06;
 
 // Inventory
@@ -28,3 +29,8 @@ holding = pointer_null;
 // Animation
 walk_cycle = 0; // max 14
 blink_cycle = 0; // max 150;
+spin_cycle = 0; // max 20;
+
+// Previous Position
+x_prev = x;
+y_prev = y;
