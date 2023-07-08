@@ -23,6 +23,8 @@ bow = false
 boomerang = false;
 bowling_ball = false;
 
+holding = pointer_null;
+
 // Animation
 walk_cycle = 0; // max 14
 blink_cycle = 0; // max 150;

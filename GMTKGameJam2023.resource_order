@@ -27,6 +27,7 @@
     {"name":"spr_solid_placeholder","order":1,"path":"sprites/spr_solid_placeholder/spr_solid_placeholder.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"obj_boomerang","order":2,"path":"objects/obj_boomerang/obj_boomerang.yy",},
+    {"name":"spr_bow_small","order":5,"path":"sprites/spr_bow_small/spr_bow_small.yy",},
     {"name":"spr_bowling_ball","order":4,"path":"sprites/spr_bowling_ball/spr_bowling_ball.yy",},
     {"name":"obj_solid","order":2,"path":"objects/obj_solid/obj_solid.yy",},
     {"name":"spr_player_armed","order":3,"path":"sprites/spr_player_armed/spr_player_armed.yy",},

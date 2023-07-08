@@ -73,7 +73,7 @@ if(_h_walk != 0 && !airborne){
 
 // Jump Animation
 if(jumping){
-	image_index = 15;
+	//image_index = 15;
 }
 	
 
@@ -89,42 +89,27 @@ if( vel_x > 0 ) image_xscale = 1;
 //vel_x -= _h_walk;
 
 
-
-
-/*
-// Gravity and friction
-if(airborne){
-	vel_y += grav;
-	image_angle = point_direction(x,y, mouse_x, mouse_y)-90;
-}else{
-	vel_y = 0;
-	vel_x = vel_x/1.1;
-}
-
-
 // If bow released, launch!
 if(charge && mouse_check_button_released(mb_right)){
 	vel_x = -lengthdir_x( charge/60, mouse_x );
 	vel_y = lengthdir_y( charge/60, mouse_y );
 	airborne = true;
+	
+	//Drop Bow
+	if(holding){
+		bow = false;
+		holding.held = false;
+		holding = pointer_null;
+	}
 }
 
 // Check for bow draw
 if(mouse_check_button(mb_right)){
-	if(charge <= 120) charge++;
-	image_index = 1;
+	if(charge <= 150) charge+=5;
+	image_index = 12;
 }else{
-	image_index = 0;
 	charge = 0;
 }
 
-// Temp -> if drawing, change color indicate such
-if(charge){
-	// Change image index
-	//image_blend = c_green;
-}else{
-	//image_blend = c_white;
-}
 
-*/
 
