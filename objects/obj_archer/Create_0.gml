@@ -47,7 +47,12 @@ boom_angle = 0;
 hurt_clock = 0;
 hurt_line = "Ouch!";
 
+// Title
+title = false;
 
+// Strike
+strike_clock = 0;
+strike = sou_strike;
 
 // Create Crosshair
 instance_create_layer(0,0,"Instances", obj_crosshair);

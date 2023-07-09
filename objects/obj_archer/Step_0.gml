@@ -24,11 +24,13 @@ if(!charge && !launched && !skid && !belly_up){
 
 // Landing - behavior depends on previous state
 if( place_meeting(x, y+1, obj_solid) && !iframe ){
+	
 	airborne = false;
 	jumping = false;
 	
 	if(launched){
 	
+		audio_play_sound(strike, 1, 0);
 		if(spin){
 			spin = false;
 			skid = true;
@@ -89,6 +91,7 @@ if(place_meeting(x+vel_x, y, obj_solid)){
 		var _ouch = scr_text_create(x,y);
 		scr_text_set_text(_ouch, hurt_line);
 		scr_text_set_duration(_ouch, 2);
+		alarm[1] = 60;
 		
 		vel_x = -sign(vel_x) * 1;
 		vel_y = -1;
@@ -286,7 +289,7 @@ switch hurt_clock{
 	case 1: hurt_line = "Ouch!"; break;
 	case 2: hurt_line = "Oof!"; break;
 	case 3: hurt_line = "Ow!"; break;
-	case 4: hurt_line = "Oh god my face!"; break;
+	case 4: hurt_line = "Ouch!"; break;
 	case 5: hurt_line = "Augh!"; break;
 	case 6: hurt_line = "Argh!"; break;
 	case 7: hurt_line = "Ugh!"; break;
@@ -295,4 +298,11 @@ switch hurt_clock{
 }
 if(hurt_clock >= 9) hurt_clock = 0;
 	
+strike_clock++;
+switch strike_clock{
+	case 1: strike = sou_strike; break;
+	case 2: strike = sou_strike1; break;
+	case 3: strike = sou_strike2; break;
+}
+if(strike_clock >3) strike_clock = 0;
 	
