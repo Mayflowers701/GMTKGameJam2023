@@ -28,6 +28,15 @@ if( place_meeting(x, y+1, obj_solid) && _key_jump){
 // If sleeping, don't do anything until jump
 if(sleep){
 	image_index = 36;
+	
+	sleep_clock++;
+	if(sleep_clock >= 60){
+		sleep_clock = 0;
+		var zzz = scr_text_create(x-16,y);
+		scr_text_set_text(zzz, "Z");
+		scr_text_set_duration(zzz, 2);
+		
+	}
 	exit;
 }
 

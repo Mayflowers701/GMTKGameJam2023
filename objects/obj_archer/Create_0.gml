@@ -43,6 +43,10 @@ y_prev = y;
 boom_charge = 0;
 boom_angle = 0;
 
+// Hurt Clock
+hurt_clock = 0;
+hurt_line = "Ouch!";
+
 
 
 // Create Crosshair

@@ -83,6 +83,12 @@ if(place_meeting(x+vel_x, y, obj_solid)){
 		spin = false;
 		tumble = false;
 		stun = true;
+		audio_play_sound(sou_smack,1,0);
+		audio_stop_sound(sou_birds);
+		alarm[0] = 120;
+		var _ouch = scr_text_create(x,y);
+		scr_text_set_text(_ouch, hurt_line);
+		scr_text_set_duration(_ouch, 2);
 		
 		vel_x = -sign(vel_x) * 1;
 		vel_y = -1;
@@ -211,6 +217,7 @@ if(charge && mouse_check_button_released(mb_left) && bow){
 	iframe = 5;
 	launched = true;
 	spin = true;
+	audio_play_sound(sou_bow, 1,0);
 	
 	vel_x = lengthdir_x( charge/20, point_direction(x,y,mouse_x,mouse_y) );
 	vel_y = lengthdir_y( charge/20, point_direction(x,y,mouse_x,mouse_y) ) - 2;
@@ -229,6 +236,7 @@ if(charge && mouse_check_button_released(mb_left) && boomerang){
 	iframe = 5;
 	launched = true;
 	tumble = true;
+	audio_play_sound(sou_boomerang, 1, 0);
 	
 	boom_charge = charge/20;
 	
@@ -271,3 +279,20 @@ y_prev = y;
 
 // terminal velocity
 if( vel_y > 9 ){ vel_y = 9 ;}
+
+// random hurt 
+hurt_clock++;
+switch hurt_clock{
+	case 1: hurt_line = "Ouch!"; break;
+	case 2: hurt_line = "Oof!"; break;
+	case 3: hurt_line = "Ow!"; break;
+	case 4: hurt_line = "Oh god my face!"; break;
+	case 5: hurt_line = "Augh!"; break;
+	case 6: hurt_line = "Argh!"; break;
+	case 7: hurt_line = "Ugh!"; break;
+	case 8: hurt_line = "Aarghh!"; break;
+	case 9: hurt_line = "Ow ow ow!"; break;
+}
+if(hurt_clock >= 9) hurt_clock = 0;
+	
+	
