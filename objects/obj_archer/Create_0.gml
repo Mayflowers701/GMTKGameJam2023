@@ -47,3 +47,4 @@ boom_angle = 0;
 
 // Create Crosshair
 instance_create_layer(0,0,"Instances", obj_crosshair);
+
