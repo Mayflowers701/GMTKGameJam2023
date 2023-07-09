@@ -1,9 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_breakable",
+  "name": "obj_solid_invis_breaks",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -11,7 +11,10 @@
     "name": "Env",
     "path": "folders/Objects/Env.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_solid",
+    "path": "objects/obj_solid/obj_solid.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_breakable",
-    "path": "sprites/spr_breakable/spr_breakable.yy",
+    "name": "spr_solid_placeholder",
+    "path": "sprites/spr_solid_placeholder/spr_solid_placeholder.yy",
   },
   "spriteMaskId": null,
   "visible": true,
