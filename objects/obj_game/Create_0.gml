@@ -18,3 +18,11 @@ window_set_rectangle(_xpos, _ypos, 2048, 1024);
 
 // Adjust Surface
 surface_resize(application_surface, 512, 256);
+
+cloud_clock = 0;
+cloud_goal = irandom_range( 120, 420 );
+
+for( var i = 0; i <= irandom_range( 1, 4 ); i++){
+	instance_create_layer( irandom_range(0, room_width), irandom_range(0, room_height), "Clouds", obj_cloud);
+}
+

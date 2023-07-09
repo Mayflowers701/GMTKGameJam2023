@@ -36,6 +36,7 @@
     {"name":"spr_kill","order":4,"path":"sprites/spr_kill/spr_kill.yy",},
     {"name":"spr_ivy_bit","order":9,"path":"sprites/spr_ivy_bit/spr_ivy_bit.yy",},
     {"name":"spr_solid_placeholder","order":1,"path":"sprites/spr_solid_placeholder/spr_solid_placeholder.yy",},
+    {"name":"spr_clouds","order":13,"path":"sprites/spr_clouds/spr_clouds.yy",},
     {"name":"sou_clap","order":9,"path":"sounds/sou_clap/sou_clap.yy",},
     {"name":"sou_jump","order":10,"path":"sounds/sou_jump/sou_jump.yy",},
     {"name":"obj_win","order":8,"path":"objects/obj_win/obj_win.yy",},
@@ -68,6 +69,7 @@
     {"name":"til_smooth_background","order":1,"path":"tilesets/til_smooth_background/til_smooth_background.yy",},
     {"name":"obj_solid","order":2,"path":"objects/obj_solid/obj_solid.yy",},
     {"name":"sou_chill","order":5,"path":"sounds/sou_chill/sou_chill.yy",},
+    {"name":"Sprite38","order":10,"path":"sprites/Sprite38/Sprite38.yy",},
     {"name":"sou_strike","order":6,"path":"sounds/sou_strike/sou_strike.yy",},
     {"name":"roo_stage06","order":8,"path":"rooms/roo_stage06/roo_stage06.yy",},
     {"name":"spr_ivy_end30","order":6,"path":"sprites/spr_ivy_end30/spr_ivy_end30.yy",},
@@ -95,6 +97,7 @@
     {"name":"spr_ivy_end3031","order":7,"path":"sprites/spr_ivy_end3031/spr_ivy_end3031.yy",},
     {"name":"roo_stage05","order":3,"path":"rooms/roo_stage05/roo_stage05.yy",},
     {"name":"roo_stage00","order":2,"path":"rooms/roo_stage00/roo_stage00.yy",},
+    {"name":"obj_cloud","order":11,"path":"objects/obj_cloud/obj_cloud.yy",},
     {"name":"spr_grass2","order":4,"path":"sprites/spr_grass2/spr_grass2.yy",},
   ],
 }
