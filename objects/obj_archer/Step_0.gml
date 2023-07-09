@@ -180,6 +180,10 @@ if( tumble ){
 	vel_x = (lengthdir_x(boom_charge, boom_angle) +1)*face;
 	
 }
+
+if(!tumble){
+	boom_angle = 0;	
+}
 	
 
 // Movement: update position based on velocity
