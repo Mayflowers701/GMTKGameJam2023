@@ -37,6 +37,7 @@
     {"name":"spr_ivy_bit","order":9,"path":"sprites/spr_ivy_bit/spr_ivy_bit.yy",},
     {"name":"spr_solid_placeholder","order":1,"path":"sprites/spr_solid_placeholder/spr_solid_placeholder.yy",},
     {"name":"sou_clap","order":9,"path":"sounds/sou_clap/sou_clap.yy",},
+    {"name":"sou_jump","order":10,"path":"sounds/sou_jump/sou_jump.yy",},
     {"name":"obj_win","order":8,"path":"objects/obj_win/obj_win.yy",},
     {"name":"spr_title","order":4,"path":"sprites/spr_title/spr_title.yy",},
     {"name":"obj_entrance","order":7,"path":"objects/obj_entrance/obj_entrance.yy",},

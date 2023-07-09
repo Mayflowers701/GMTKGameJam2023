@@ -5,8 +5,12 @@ draw_set_halign(fa_center);
 draw_set_font(bitPotion);
 draw_set_color(c_white);
 
-var _text = data[? "text"]
-var _c = make_color_rgb(255,255,255)
-//draw_text(x, y, data[? "text"]);
-draw_text_color(x, y, _text, _c, _c, _c, _c, alpha)
+if(sleep){
+	draw_text(512/2, 256/2 -64, "press SPACE to begin");
+}
+else{
+	draw_text(512/2, 256/2-64, "WASD to move \nSPACE to jump");
+}
 
+
+draw_self();

@@ -17,6 +17,7 @@ var _key_jump = keyboard_check_pressed(vk_space);
 
 // Jump
 if( place_meeting(x, y+1, obj_solid) && _key_jump){
+	audio_play_sound(sou_jump, 1, 0);
 	sleep = false;
 	airborne = true;
 	jumping = true;
@@ -28,6 +29,7 @@ if( place_meeting(x, y+1, obj_solid) && _key_jump){
 // If sleeping, don't do anything until jump
 if(sleep){
 	image_index = 36;
+	
 	
 	sleep_clock++;
 	if(sleep_clock >= 60){

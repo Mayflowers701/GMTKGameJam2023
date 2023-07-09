@@ -68,6 +68,7 @@ if( place_meeting(x, y+1, obj_solid) && !iframe ){
 }
 // Jump
 if( place_meeting(x, y+1, obj_solid) && _key_jump){
+	audio_play_sound(sou_jump, 1, 0);
 	airborne = true;
 	jumping = true;
 	skid = false; // reset fallen downs state
