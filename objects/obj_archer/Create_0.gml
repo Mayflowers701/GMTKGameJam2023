@@ -57,3 +57,6 @@ strike = sou_strike;
 // Create Crosshair
 instance_create_layer(0,0,"Instances", obj_crosshair);
 
+// Sleeping
+sleep = false;
+sleep_clock = 0;
