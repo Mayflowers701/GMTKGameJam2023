@@ -3,7 +3,8 @@
 // Before we do anything, check to make sure we're not in a floor
 // teleport out of floor if stuck
 while( place_meeting(x,y, obj_solid) ){
-	y--;
+	if(tumble && !iframe) {y++; tumble = false; stun = true;}
+	else {y--;}
 }
 
 
@@ -193,6 +194,7 @@ if( !launched ){
 
 if( charge ){
 	image_xscale = sign( mouse_x - x ); // Face toward the mouse when charging
+	image_angle = 0;
 }
 
 
